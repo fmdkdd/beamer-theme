@@ -1,16 +1,15 @@
 \documentclass[xcolor=rgb]{beamer}
 
-%% XelateX for nicer fonts
 \usepackage{fontspec}
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \usepackage[english]{babel}
 
-\usepackage{tikz}
+\usepackage{tikz}               % required for drawing
 
-\setsansfont[Ligatures=TeX]{Georgia}
-\setmainfont[Ligatures=TeX]{Ubuntu}
-\setmonofont[Ligatures=TeX]{Ubuntu Mono}
+\setsansfont[Ligatures=TeX]{Georgia} % content
+\setmainfont[Ligatures=TeX]{Ubuntu}  % structure
+\setmonofont[Ligatures=TeX]{Ubuntu Mono} % code
 
 %% Include theme!
 \input{theme}
@@ -24,9 +23,10 @@
 
 \maketitle
 
-\section{Foo}
+\section{Section title}
 
 \begin{frame}{Frame title}{Subtitle}
+  Itemize:
   \begin{itemize}
   \item Item 1
   \item Item 2
