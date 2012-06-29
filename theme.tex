@@ -1,0 +1,123 @@
+%% Requisites
+\usetikzlibrary{backgrounds, calc}
+
+%% Colors!
+\definecolor{Thoughtbysome}{RGB}{236,208,120}
+\definecolor{Thoughtyouwere}{RGB}{84,36,55}
+\definecolor{Thoughtless}{RGB}{83,119,122}
+\definecolor{Thoughtbrick}{RGB}{217,91,67}
+\definecolor{Thoughtless2}{RGB}{192,41,66}
+
+\definecolor{Primary}{Hsb}{0, 0, .2}
+\definecolor{Secondary}{Hsb}{0, 0, .3}
+\definecolor{Tertiary}{Hsb}{0, 0, .7}
+\colorlet{Backdrop}{Thoughtbysome!5}
+
+%% Global theme
+\usecolortheme[named=Primary]{structure}
+\setbeamercolor{normal text}{fg=Primary, bg=Backdrop}
+
+%% Title page
+\setbeamertemplate{title page}[plain]
+
+\setbeamerfont{title}{series=\bfseries, family=\rmfamily, size=\huge}
+\setbeamerfont{author}{family=\rmfamily, series=\bfseries}
+\setbeamerfont{institute}{family=\rmfamily, series=\bfseries, size=\small}
+\setbeamerfont{date}{family=\rmfamily, series=\bfseries, size=\small}
+
+\setbeamercolor{title}{fg=Thoughtless, bg=}
+\setbeamercolor{author}{fg=Backdrop}
+\setbeamercolor{institute}{fg=Backdrop}
+\setbeamercolor{date}{fg=Backdrop}
+
+%% Frames
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamerfont{frametitle}{family=\rmfamily, series=\bfseries}
+\setbeamerfont{footline}{size=\small, family=\rmfamily}
+
+\setbeamercolor{frametitle}{fg=Thoughtbysome!10, bg=Thoughtless}
+
+%% Itemize environment
+\setbeamertemplate{items}[circle]
+
+\setbeamercolor{item}{fg=Thoughtless}
+
+%% Table of contents
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+\setbeamercolor{section in toc}{fg=Backdrop, bg=Thoughtbrick}
+\setbeamercolor{subsection in toc}{fg=white, bg=Thoughtless}
+
+%% Not sure about blocks ...
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\setbeamerfont{block title}{family=\rmfamily}
+
+\setbeamercolor{block title}{fg=Thoughtbysome!10, bg=Thoughtless}
+\setbeamercolor{block body}{bg=Thoughtbysome!10}
+
+%% Misc. templates
+\setbeamerfont{button}{size=\normal}
+\setbeamercolor{alerted text}{fg=Thoughtless2}
+
+%% Nice section slides
+\AtBeginSection[] {
+  \addtocounter{framenumber}{-1}
+  {
+    \usebackgroundtemplate{
+      \begin{tikzpicture}
+        \draw [Backdrop, fill=Backdrop]
+        (0,0) rectangle (\paperwidth, \paperheight);
+        \draw [Thoughtbrick, fill=Thoughtbrick]
+        (0,0) rectangle (.6818\paperwidth, \paperheight);
+      \end{tikzpicture}
+    }
+    \begin{frame}[plain]
+      \begin{tikzpicture}
+        \draw [draw=none]
+        (0,0) -- ($ (.6818\paperwidth,0) - (1cm,0) $) --
+        node [anchor=east, align=right, text=Backdrop, font=\Huge\rmfamily\bfseries]
+        {\insertsectionhead}
+        ($ (.6818\paperwidth,\paperheight) - (1cm,0) $);
+      \end{tikzpicture}
+    \end{frame}
+  }
+}
+
+%% Title slide
+\renewcommand{\maketitle}{
+{
+  \usebackgroundtemplate{
+    \begin{tikzpicture}
+      \draw [Backdrop, fill=Backdrop]
+      (0,0) rectangle (\paperwidth,\paperheight);
+      \draw [Thoughtless, fill=Thoughtless]
+      (0,0) rectangle (\paperwidth, .3182\paperheight);
+    \end{tikzpicture}
+  }
+  \begin{frame}[plain]
+    \vspace{8em}
+    \begin{beamercolorbox}[center]{title}
+      \usebeamerfont{title}
+      \inserttitle
+    \end{beamercolorbox}
+
+    \vspace{7em}
+
+    \begin{beamercolorbox}[right]{author}
+      \usebeamerfont{author}
+      \insertauthor
+    \end{beamercolorbox}
+    \vspace{1em}
+    \begin{beamercolorbox}[right]{institute}
+      \usebeamerfont{institute}
+      \insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[right]{date}
+      \usebeamerfont{date}
+      \insertdate
+    \end{beamercolorbox}
+  \end{frame}
+}}

@@ -1,0 +1,45 @@
+\documentclass[xcolor=rgb]{beamer}
+
+%% XelateX for nicer fonts
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage[english]{babel}
+
+\usepackage{tikz}
+
+\setsansfont[Ligatures=TeX]{Georgia}
+\setmainfont[Ligatures=TeX]{Ubuntu}
+\setmonofont[Ligatures=TeX]{Ubuntu Mono}
+
+%% Include theme!
+\input{theme}
+
+\title{Presentation title}
+\author{John Smith}
+\institute{University of College}
+\date{April 1 2015}
+
+\begin{document}
+
+\maketitle
+
+\section{Foo}
+
+\begin{frame}{Frame title}{Subtitle}
+  \begin{itemize}
+  \item Item 1
+  \item Item 2
+  \end{itemize}
+
+  \begin{block}{Block}
+    Blocks could use some new look... they're too "beamer-ish"
+  \end{block}
+\end{frame}
+
+\end{document}
+
+
+%% Local Variables:
+%% compile-command: "xelatex example.tex"
+%% End:
