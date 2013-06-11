@@ -64,7 +64,6 @@
 
 %% Nice section slides
 \AtBeginSection[] {
-  \addtocounter{framenumber}{-1}
   {
     \usebackgroundtemplate{
       \begin{tikzpicture}
@@ -74,7 +73,7 @@
         (0,0) rectangle (.6818\paperwidth, \paperheight);
       \end{tikzpicture}
     }
-    \begin{frame}[plain]
+    \begin{frame}[plain,noframenumbering]
       \begin{tikzpicture}
         \draw [draw=none]
         (0,0) -- ($ (.6818\paperwidth,0) - (1cm,0) $) --
@@ -97,7 +96,7 @@
       (0,0) rectangle (\paperwidth, .3182\paperheight);
     \end{tikzpicture}
   }
-  \begin{frame}[plain]
+  \begin{frame}[plain,noframenumbering]
     \vspace{8em}
     \begin{beamercolorbox}[center]{title}
       \usebeamerfont{title}
