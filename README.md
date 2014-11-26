@@ -3,7 +3,7 @@
 A clean [Beamer](https://bitbucket.org/rivanvx/beamer/wiki/Home) theme
 I made up for some of my presentations.  Made to use with [XeLateX](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=xetex).
 
-![Screenshot](http://github.com/fmdkdd/beamer-theme/raw/master/screen.png)
+![Screenshot](https://github.com/fmdkdd/beamer-theme/blob/master/screen.png)
 
 # Acknowledgments
 
